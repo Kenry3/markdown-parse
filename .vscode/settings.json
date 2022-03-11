@@ -1,5 +1,8 @@
 {
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "markdown-parse-main/lib/commonmark-0.18.2.jar",
+        "libs/hamcrest-core-1.3.jar",
+        "markdown-parse-main/lib/junit-4.13.2.jar"
     ]
 }
