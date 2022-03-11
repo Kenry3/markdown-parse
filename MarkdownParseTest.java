@@ -14,12 +14,20 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
 
-    @Test
+    /**@Test
     public void testGetLink() throws IOException {
-        Path fileName = Path.of("/Users/kenry/Documents/GitHub/markdown-parse/test-file1.md");
+        Path fileName = Path.of("/Users/kenry/Documents/GitHub/markdown-parse/Snippet1.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("https://something.com","some-page.html"), links);
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), links);
+    }*/
+
+    @Test
+    public void testGetLink() throws IOException {
+        Path fileName = Path.of("/Users/kenry/Documents/GitHub/markdown-parse/Snippet3.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse2.getLinks(contents);
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), links);
     }
 
 }
