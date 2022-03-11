@@ -54,13 +54,20 @@ public class MarkdownParse {
         // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+            int bTS = markdown.indexOf("`", currentIndex);
+            int bTE = markdown.indexOf("`", bTS + 1);
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
+<<<<<<< Updated upstream
             int nextCodeBlock = markdown.indexOf("\n```");
             if(nextCodeBlock < nextOpenBracket && nextCodeBlock != -1) {
                 int endOfCodeBlock = markdown.indexOf("\n```");
                 currentIndex = endOfCodeBlock + 1;
                 continue;
             }
+=======
+            if(nextOpenBracket == -1) break;
+            if(nextOpenBracket > bTS && bTE != -1) nextOpenBracket = markdown.indexOf("[", bTE + 1);
+>>>>>>> Stashed changes
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
 
